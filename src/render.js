@@ -85,3 +85,15 @@ async function handleStop(e) {
 
   writeFile(filePath, buffer, () => console.log("video saved successfully!"));
 }
+
+startBtn.onclick = (e) => {
+  mediaRecorder.start();
+  startBtn.classList.add("is-danger");
+  startBtn.innerText = "Recording";
+};
+
+stopBtn.onclick = (e) => {
+  mediaRecorder.stop();
+  startBtn.classList.remove("is-danger");
+  startBtn.innerText = "Start";
+};
